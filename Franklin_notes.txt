@@ -1,0 +1,8 @@
+cd /group/sldmunozgrp/ #move to workspace folder
+srun -c 1 -t 3:00:00 --mem=8000 --partition=low --pty /bin/bash #request compute node
+conda create -y -n readproc #creating a conda environment
+module avail usearch #use to check usearch version number
+module load usearch/11.0.667 #to access usearch
+tmux new -s test #creating tmux session called test
+tmux attach #how to access tmuz session later
+look at shell parameter expansion or basename to move files

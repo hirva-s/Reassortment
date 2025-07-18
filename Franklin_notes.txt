@@ -6,3 +6,50 @@ module load usearch/11.0.667 #to access usearch
 tmux new -s test #creating tmux session called test
 tmux attach #how to access tmuz session later
 look at shell parameter expansion or basename to move files
+
+
+
+for i in barcode*; do echo ${i%%.*}; done  #extracts only the barcode and number part from the fastq files
+for i in barcode*.fastq; do mkdir ${i%%.*}; done #making directories for all barcodes
+for i in barcode*.fastq; do mv ${i} ${i%%.*}/; done #moving fastq files to their appropriate directories
+for i in barcode*; do echo $i; grep -c '@' $i/*; done #finding num reads per barcode
+
+reads per barcode:
+barcode01
+90639
+barcode02
+262599
+barcode03
+54234
+barcode04
+269912
+barcode05
+247455
+barcode06
+363184
+barcode07
+121398
+barcode08
+137093
+barcode09
+92836
+barcode10
+45531
+barcode11
+112944
+barcode12
+82579
+barcode13
+92281
+barcode14
+129361
+barcode15
+99361
+barcode16
+164262
+barcode17
+249087
+barcode18
+529471
+barcode19
+178227

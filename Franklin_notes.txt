@@ -54,4 +54,7 @@ barcode18
 barcode19
 178227
 
+
+usearch -usearch_global barcode01.all.fastq -db ../all_parent_db.fasta -id 0.98 -alnout ht2 -strand both #usearch command
+
 grep 't >' barcode01_hits | sed -n '2~2p' | cut -d ' ' -f 3 | cut -c '2-'  #extracting targets

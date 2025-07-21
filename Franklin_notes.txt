@@ -54,4 +54,4 @@ barcode18
 barcode19
 178227
 
-grep 't >' barcode01_hits | sed -n '2~2p'| cut -d ' ' -f 3| head #extracting targets
+grep 't >' barcode01_hits | sed -n '2~2p' | cut -d ' ' -f 3 | cut -c '2-'  #extracting targets
